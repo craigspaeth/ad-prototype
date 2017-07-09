@@ -1,0 +1,44 @@
+{
+  "name": "ad-prototype",
+  "version": "1.0.0",
+  "description": "Quick homepage loading experience prototype for an agency",
+  "main": "index.js",
+  "scripts": {
+    "js": "watchify src/index.js -o assets/index.js -t [babelify]",
+    "html": "jade src/index.jade --watch -o .",
+    "css": "stylus src/index.styl --watch -o assets/index.css",
+    "watch": "concurrently 'npm run js' 'npm run html' 'npm run css'"
+  },
+  "babel": {
+    "presets": [
+      "latest"
+    ],
+    "plugins": [
+      "transform-runtime"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/craigspaeth/ad-prototype.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/craigspaeth/ad-prototype/issues"
+  },
+  "homepage": "https://github.com/craigspaeth/ad-prototype#readme",
+  "dependencies": {
+    "@types/es6-promise": "0.0.32",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-latest": "^6.24.1",
+    "babelify": "^7.3.0",
+    "browserify": "^14.4.0",
+    "concurrently": "^3.5.0",
+    "jade": "^1.11.0",
+    "jquery": "^3.2.1",
+    "nib": "^1.1.2",
+    "stylus": "^0.54.5",
+    "typescript": "^2.4.1",
+    "watchify": "^3.9.0"
+  }
+}
