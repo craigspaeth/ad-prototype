@@ -12292,13 +12292,13 @@ var sleep = function sleep(ms) {
   });
 };
 
-$((0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee() {
+$('video').get(0).addEventListener('loadeddata', (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee() {
   return _regenerator2.default.wrap(function _callee$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
           _context.next = 2;
-          return sleep(500);
+          return sleep(300);
 
         case 2:
           $('.loader').addClass('finished');
@@ -12308,14 +12308,20 @@ $((0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee() 
         case 5:
           $('.loader').remove();
           $('.video-container').addClass('shrink');
-          $('.color-block').addClass('active');
+          $('.logo').addClass('active');
+          _context.next = 10;
+          return sleep(500);
 
-        case 8:
+        case 10:
+          $('.color-block').addClass('active');
+          $('.header').addClass('active');
+
+        case 12:
         case 'end':
           return _context.stop();
       }
     }
   }, _callee, undefined);
-})));
+})), false);
 
 },{"babel-runtime/core-js/promise":1,"babel-runtime/helpers/asyncToGenerator":2,"babel-runtime/regenerator":3,"jquery":68}]},{},[71]);
