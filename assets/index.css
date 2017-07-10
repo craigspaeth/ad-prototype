@@ -396,10 +396,10 @@ a img {
   transform: translateX(-50vw) translateY(-50%);
 }
 .v-container .color-block {
-  background-color: #d21920;
+  background-color: #ed1613;
 }
 .v-container h3 {
-  color: #d21920;
+  color: #ed1613;
 }
 .v-container.active {
   opacity: 1;
