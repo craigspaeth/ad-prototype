@@ -11,6 +11,16 @@ $('video').get(0).addEventListener('loadeddata', async () => {
   $('.video-container').addClass('shrink')
   $('.logo').addClass('active')
   await sleep(500)
-  $('.color-block').addClass('active')
+  $('.ge-container .color-block').addClass('active')
   $('.header').addClass('active')
 }, false)
+
+$('.right-nav').click(async () => {
+  $('.right-nav a').removeClass('active')
+  $('.right-nav a:eq(1)').addClass('active')
+  $('.ge-container').addClass('wipe-off')
+  await sleep(1000)
+  $('.v-container').addClass('active')
+  await sleep(500)
+  $('.v-container .color-block').addClass('active')
+})

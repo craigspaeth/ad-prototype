@@ -6,6 +6,7 @@ medium-margin = 30px
 small-margin = 20px
 gray-color = rgb(128, 128, 128)
 blue-color = rgb(51, 107, 190)
+red-color = rgb(210, 25, 32)	
 video-easing = cubic-bezier(0.420, 0.000, 0.580, 1.000)
 
 @font-face
@@ -16,6 +17,11 @@ video-easing = cubic-bezier(0.420, 0.000, 0.580, 1.000)
   font-family: Benton
   src: url('fonts/light.woff') format('woff')
   font-weight: 200
+
+@font-face
+  font-family: Benton
+  src: url('fonts/regular.woff') format('woff')
+  font-weight: 600
 
 @font-face
   font-family: Benton
@@ -76,7 +82,7 @@ video-easing = cubic-bezier(0.420, 0.000, 0.580, 1.000)
     opacity 0
   h3
     color: blue-color
-    font-weight: bold
+    font-weight 600
   h3, .header-link
     opacity 0
     position: relative
@@ -84,9 +90,9 @@ video-easing = cubic-bezier(0.420, 0.000, 0.580, 1.000)
     transition: all 500ms ease-out
   .header-link
     background: url(arrow.png) no-repeat calc(100% - 7px) center
-    padding-right: 45px
+    padding-right: 40px
     cursor: pointer
-    transition: background-position-x 300ms
+    transition: all 500ms ease-out, background-position-x 300ms
     &:hover
       background-position-x: 100%
 
@@ -106,7 +112,7 @@ video-easing = cubic-bezier(0.420, 0.000, 0.580, 1.000)
 
 .nav
   width: 100%
-  font-size: 22px
+  font-size: 20px
   font-weight: 200
   height: large-margin
   padding: medium-margin large-margin
@@ -116,6 +122,8 @@ video-easing = cubic-bezier(0.420, 0.000, 0.580, 1.000)
     margin-right: medium-margin
   .logo
     display: inline-block
+    position: relative
+    top: 1px
     path
       fill: white
       transition: fill 0.5s 
@@ -160,3 +168,36 @@ video-easing = cubic-bezier(0.420, 0.000, 0.580, 1.000)
   transition: opacity 500ms ease-in-out
   &.finished
     opacity: 0
+
+.ge-container.wipe-off
+  .video-container, .color-block, .header
+    transition: transform 1s ease-in-out
+    transform: translateX(100vw)
+  .video-container
+    transition-delay: 0.2s
+  .header
+    transition-delay: 0.3s
+    transform: translateX(100vw) translateY(-50%)
+
+.v-container
+  opacity 0
+  .video-container, .header
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out
+    transform: translateX(-50vw)
+    opacity 0
+  .header
+     transform: translateX(-50vw) translateY(-50%)
+  .color-block
+    background-color: red-color
+  h3
+    color: red-color
+  &.active
+    opacity 1
+    .video-container, .header
+      transform: translateX(0)
+      opacity: 1
+    .video-container
+      transition-delay: 0.2s
+    .header
+      transition-delay: 0.3s
+      transform: translateX(0) translateY(-50%)

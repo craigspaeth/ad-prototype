@@ -12313,7 +12313,7 @@ $('video').get(0).addEventListener('loadeddata', (0, _asyncToGenerator3.default)
           return sleep(500);
 
         case 10:
-          $('.color-block').addClass('active');
+          $('.ge-container .color-block').addClass('active');
           $('.header').addClass('active');
 
         case 12:
@@ -12323,5 +12323,32 @@ $('video').get(0).addEventListener('loadeddata', (0, _asyncToGenerator3.default)
     }
   }, _callee, undefined);
 })), false);
+
+$('.right-nav').click((0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2() {
+  return _regenerator2.default.wrap(function _callee2$(_context2) {
+    while (1) {
+      switch (_context2.prev = _context2.next) {
+        case 0:
+          $('.right-nav a').removeClass('active');
+          $('.right-nav a:eq(1)').addClass('active');
+          $('.ge-container').addClass('wipe-off');
+          _context2.next = 5;
+          return sleep(1000);
+
+        case 5:
+          $('.v-container').addClass('active');
+          _context2.next = 8;
+          return sleep(500);
+
+        case 8:
+          $('.v-container .color-block').addClass('active');
+
+        case 9:
+        case 'end':
+          return _context2.stop();
+      }
+    }
+  }, _callee2, undefined);
+})));
 
 },{"babel-runtime/core-js/promise":1,"babel-runtime/helpers/asyncToGenerator":2,"babel-runtime/regenerator":3,"jquery":68}]},{},[71]);
