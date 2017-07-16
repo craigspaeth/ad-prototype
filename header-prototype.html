@@ -1,0 +1,13 @@
+<html><head><link href="assets/index.css" type="text/css" rel="stylesheet"/></head><body class="header-prototype"><div class="header-prototype-header"><img src="assets/header.svg"/></div><div class="header-prototype-bg"></div><img src="assets/copy.svg" class="header-prototype-copy"/><div class="header-prototype-spacer"></div></body><script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script><script>document.addEventListener("DOMContentLoaded", function(event) {
+  var waypoint = new Waypoint({
+    element: document.querySelector('.header-prototype-spacer'),
+    handler: function(direction) {
+      const el = document.querySelector('.header-prototype-header')
+      if (direction == 'down') {
+        el.className += ' filled'
+      } else {
+        el.className = el.className.replace(' filled', '')  
+      }
+    }
+  })
+})</script></html>

@@ -1,0 +1,24 @@
+html
+  head
+    link( href="assets/index.css" type="text/css" rel="stylesheet" )
+  body.header-prototype
+    .header-prototype-header
+      img( src="assets/header.svg" )
+    .header-prototype-bg
+    img.header-prototype-copy( src="assets/copy.svg" )
+    .header-prototype-spacer
+  script( src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js" )
+  script.
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var waypoint = new Waypoint({
+        element: document.querySelector('.header-prototype-spacer'),
+        handler: function(direction) {
+          const el = document.querySelector('.header-prototype-header')
+          if (direction == 'down') {
+            el.className += ' filled'
+          } else {
+            el.className = el.className.replace(' filled', '')  
+          }
+        }
+      })
+    })

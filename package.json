@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "js": "watchify src/index.js -o assets/index.js -t [babelify]",
-    "html": "jade src/index.jade --watch -o .",
+    "html": "jade src/*.jade --watch -o .",
     "css": "stylus src/index.styl --watch -o assets/index.css",
     "watch": "concurrently 'npm run js' 'npm run html' 'npm run css'"
   },

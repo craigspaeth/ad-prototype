@@ -201,3 +201,38 @@ video-easing = cubic-bezier(0.420, 0.000, 0.580, 1.000)
     .header
       transition-delay: 0.3s
       transform: translateX(0) translateY(-50%)
+
+.header-prototype
+  &-bg, &-header, &-copy
+    width: 100vw
+    position: absolute
+    top: 0
+    left: 0
+  &-bg
+    background-image: url(bg.jpg)
+    background-size: cover
+    height: 100vh
+  &-copy
+    max-width: 500px
+    margin-left: 90px
+    top: 50%
+    transform: translate(0, -50%)
+  &-header
+    top: 0
+    left: 0
+    position: fixed
+    z-index: 2
+    padding: 35px 0
+    height: 90px
+    transition: background 150ms ease-in-out, box-shadow 150ms ease-in-out
+    img
+      left: 90px
+      position: relative
+      max-width: 600px
+      top: -8px
+    &.filled
+      background: white
+      box-shadow: 1px 1px 15px rgba(0,0,0,0.05)
+  &-spacer
+    height: 1200px
+    margin-top: 10vh
